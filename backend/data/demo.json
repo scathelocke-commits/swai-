@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "demo": true,
+    "institutionDisclaimer": "단국대학교의 실제 학사규정 또는 학적정보가 아닌 교육용 가상 자료입니다.",
+    "analysisDisclaimer": "이수현황과 판정은 사용자 입력으로 계산되지 않는 고정된 예시 결과입니다.",
+    "roadmapDisclaimer": "표시된 강좌와 학기는 가상이며 실제 수강신청에 사용할 수 없습니다."
+  },
+  "student": {
+    "name": "홍길동",
+    "studentIdLabel": "2023학번",
+    "entryYear": "2023",
+    "major": "물리학과",
+    "track": "단일전공",
+    "grade": "3",
+    "semester": "2"
+  },
+  "requirements": {
+    "total": 130,
+    "sections": [
+      { "id": "majorRequired", "label": "전공필수", "credits": 24, "description": "학과 핵심 교과목 이수", "icon": "book-open", "color": "violet" },
+      { "id": "majorElective", "label": "전공선택", "credits": 36, "description": "전공 심화 및 선택 교과목", "icon": "atom", "color": "indigo" },
+      { "id": "general", "label": "교양", "credits": 30, "description": "기초 소양 및 공통 교육", "icon": "library", "color": "sky" },
+      { "id": "other", "label": "기타", "credits": 40, "description": "일반선택 등 기타 이수 영역", "icon": "layers", "color": "amber" }
+    ],
+    "mandatoryCourses": [
+      { "code": "DEMO-P101", "name": "기초물리학 I", "credits": 3 },
+      { "code": "DEMO-P102", "name": "기초물리학 II", "credits": 3 },
+      { "code": "DEMO-P201", "name": "물리학탐구실습", "credits": 3 },
+      { "code": "DEMO-P202", "name": "기초물리실험", "credits": 3 }
+    ],
+    "otherNotice": ["영역별 최소 학점 외에 지정 필수과목 조건이 별도로 존재할 수 있다고 가정한 가상 예시", "실제 대학의 졸업요건 및 학칙과 일치하지 않음"]
+  },
+  "courses": [
+    { "id": "c1", "code": "DEMO-P101", "name": "기초물리학 I", "credits": 3, "category": "전공필수", "term": "2023-1", "status": "이수완료" },
+    { "id": "c2", "code": "DEMO-P102", "name": "기초물리학 II", "credits": 3, "category": "전공필수", "term": "2023-2", "status": "이수완료" },
+    { "id": "c3", "code": "DEMO-P202", "name": "기초물리실험", "credits": 3, "category": "전공필수", "term": "2024-1", "status": "이수완료" },
+    { "id": "c4", "code": "DEMO-E105", "name": "파동과 현대물리", "credits": 3, "category": "전공선택", "term": "2024-2", "status": "이수완료" },
+    { "id": "c5", "code": "DEMO-E203", "name": "수리물리탐구", "credits": 3, "category": "전공선택", "term": "2025-1", "status": "이수완료" },
+    { "id": "c6", "code": "DEMO-G110", "name": "비판적 사고와 글쓰기", "credits": 2, "category": "교양", "term": "2024-1", "status": "이수완료" },
+    { "id": "c7", "code": "DEMO-O202", "name": "융합문제해결", "credits": 3, "category": "일반선택", "term": "2025-2", "status": "이수완료" },
+    { "id": "c8", "code": "DEMO-E302", "name": "계산물리 세미나", "credits": 3, "category": "전공선택", "term": "2026-2", "status": "수강중" }
+  ],
+  "catalog": [
+    { "code": "DEMO-P201", "name": "물리학탐구실습", "credits": 3, "category": "전공필수" },
+    { "code": "DEMO-E401", "name": "데이터물리 특강", "credits": 3, "category": "전공선택" },
+    { "code": "DEMO-G303", "name": "과학과 사회", "credits": 2, "category": "교양" },
+    { "code": "DEMO-O310", "name": "학제간 프로젝트", "credits": 3, "category": "일반선택" },
+    { "code": "DEMO-O311", "name": "융합설계 워크숍", "credits": 3, "category": "일반선택" },
+    { "code": "DEMO-E501", "name": "고급물리 탐구", "credits": 3, "category": "전공선택" }
+  ],
+  "scenarios": [
+    {
+      "id": "partial", "name": "일부 학점 부족", "shortName": "시나리오 1", "title": "졸업까지 14학점 남았어요", "subtitle": "전공필수·전공선택·교양·기타 영역에 부족한 학점이 있습니다.",
+      "status": "부족", "earned": 116, "missingCredits": 14, "unmetMandatory": ["물리학탐구실습"],
+      "credits": { "majorRequired": 21, "majorElective": 33, "general": 28, "other": 34 }
+    },
+    {
+      "id": "course", "name": "필수과목 미이수", "shortName": "시나리오 2", "title": "학점은 충족했지만 확인이 필요해요", "subtitle": "영역별 최소학점을 충족해도 지정 필수과목은 별도로 확인해야 합니다.",
+      "status": "주의", "earned": 130, "missingCredits": 0, "unmetMandatory": ["물리학탐구실습"],
+      "credits": { "majorRequired": 24, "majorElective": 36, "general": 30, "other": 40 }
+    },
+    {
+      "id": "complete", "name": "모든 요건 충족", "shortName": "시나리오 3", "title": "예시 졸업요건을 모두 충족했어요", "subtitle": "총학점, 영역별 학점, 지정 필수과목을 모두 충족한 가상 사례입니다.",
+      "status": "충족", "earned": 134, "missingCredits": 0, "unmetMandatory": [],
+      "credits": { "majorRequired": 24, "majorElective": 39, "general": 31, "other": 40 }
+    }
+  ],
+  "roadmaps": {
+    "partial": [
+      { "id": "2027-1", "title": "2027학년도 1학기", "subtitle": "핵심 부족 영역부터 보완", "courses": [
+        { "code": "DEMO-P201", "name": "물리학탐구실습", "credits": 3, "category": "전공필수", "reason": "전공필수 부족 3학점 및 지정 과목 보완", "optional": false },
+        { "code": "DEMO-E401", "name": "데이터물리 특강", "credits": 3, "category": "전공선택", "reason": "전공선택 부족 3학점 보완", "optional": false },
+        { "code": "DEMO-G303", "name": "과학과 사회", "credits": 2, "category": "교양", "reason": "교양 부족 2학점 보완", "optional": false }
+      ] },
+      { "id": "2027-2", "title": "2027학년도 2학기", "subtitle": "기타 이수학점 보완", "courses": [
+        { "code": "DEMO-O310", "name": "학제간 프로젝트", "credits": 3, "category": "일반선택", "reason": "기타 부족 학점 3학점 보완", "optional": false }
+      ] },
+      { "id": "2028-1", "title": "2028학년도 1학기", "subtitle": "잔여 요건 마무리", "courses": [
+        { "code": "DEMO-O311", "name": "융합설계 워크숍", "credits": 3, "category": "일반선택", "reason": "기타 잔여 3학점 보완", "optional": false }
+      ] }
+    ],
+    "course": [
+      { "id": "2027-1", "title": "2027학년도 1학기", "subtitle": "미이수 지정 과목 보완", "courses": [
+        { "code": "DEMO-P201", "name": "물리학탐구실습", "credits": 3, "category": "전공필수", "reason": "학점 충족과 별개인 필수과목 이수 예시", "optional": false }
+      ] },
+      { "id": "2027-2", "title": "2027학년도 2학기", "subtitle": "심화학습 선택 예시", "courses": [
+        { "code": "DEMO-E501", "name": "고급물리 탐구", "credits": 3, "category": "전공선택", "reason": "졸업요건과 무관한 선택 예시", "optional": true }
+      ] },
+      { "id": "2028-1", "title": "2028학년도 1학기", "subtitle": "개인 관심분야 탐색", "courses": [
+        { "code": "DEMO-O311", "name": "융합설계 워크숍", "credits": 3, "category": "일반선택", "reason": "졸업요건과 무관한 선택 예시", "optional": true }
+      ] }
+    ],
+    "complete": [
+      { "id": "2027-1", "title": "2027학년도 1학기", "subtitle": "요건 충족 후 선택 계획", "courses": [
+        { "code": "DEMO-E501", "name": "고급물리 탐구", "credits": 3, "category": "전공선택", "reason": "추가 탐구를 위한 선택 예시", "optional": true }
+      ] },
+      { "id": "2027-2", "title": "2027학년도 2학기", "subtitle": "선택적 학습 계획", "courses": [
+        { "code": "DEMO-O310", "name": "학제간 프로젝트", "credits": 3, "category": "일반선택", "reason": "추가 경험을 위한 선택 예시", "optional": true }
+      ] },
+      { "id": "2028-1", "title": "2028학년도 1학기", "subtitle": "개인별 진로 탐색", "courses": [
+        { "code": "DEMO-O311", "name": "융합설계 워크숍", "credits": 3, "category": "일반선택", "reason": "추가 경험을 위한 선택 예시", "optional": true }
+      ] }
+    ]
+  }
+}
